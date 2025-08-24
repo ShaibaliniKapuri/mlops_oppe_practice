@@ -76,7 +76,7 @@ jobs:
         echo "" >> report.md
         echo "### Test with:" >> report.md
         echo "\`\`\`bash" >> report.md
-        echo "curl -X POST http://$SERVICE_IP/predict -H 'Content-Type: application/json' -d  "{\"features\": [63.0,1.0,3.0,145.0,233.0,1.0,0.0,150.0,0.0,2.3,0.0,0.0,1.0]}" >> report.md
+        echo "curl -X POST http://$SERVICE_IP/predict -H 'Content-Type: application/json' -d  "{\"features\": [63.0,1.0,3.0,145.0,233.0,1.0,0.0,150.0,0.0,2.3,0.0,0.0,1.0]}"" >> report.md
         echo "\`\`\`" >> report.md
 
         cml comment create report.md
