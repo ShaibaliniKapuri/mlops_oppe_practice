@@ -21,7 +21,7 @@ env:
   GKE_ZONE: ${{ secrets.GCP_GKE_ZONE }}
   REPOSITORY_NAME: my-repo-docker-k8s # Your Artifact Registry repo name
   IMAGE_NAME: heart-api
-  DEPLOYMENT_NAME: heart-api-deployment
+  DEPLOYMENT_NAME: heart-cluster
   SERVICE_NAME: heart-api-service
 
 jobs:
