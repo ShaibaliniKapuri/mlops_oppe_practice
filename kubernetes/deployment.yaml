@@ -1,0 +1,35 @@
+# kubernetes/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heart-cluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heart-api
+  template:
+    metadata:
+      labels:
+        app: heart-api
+    spec:
+      containers:
+      - name: heart-api-container
+        image: __IMAGE_URL__  # This is a placeholder filled in by the workflow
+        ports:
+        - containerPort: 8200
+        # No environment variables are needed anymore
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: heart-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8200
